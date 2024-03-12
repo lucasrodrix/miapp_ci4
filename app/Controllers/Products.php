@@ -5,9 +5,10 @@ namespace App\Controllers;
 class Products extends BaseController{
     public function index(){
         $data = ['title' => 'Products Catalog'];
-        return view('model/header', $data)
-        .view('products/index', $data)
-        .view('model/footer', ['copy' => "2024"]);
+        return view('products/index', $data);
+        // return view('model/header', $data)
+        // .view('products/index', $data)
+        // .view('model/footer', ['copy' => "2024"]);
     }
 
     public function show($id){
@@ -15,10 +16,10 @@ class Products extends BaseController{
             'title' => 'Products Catalog',
             'id' => $id
         ];
-
-        return view('model/header', $data)
-        .view('products/show', $data)
-        .view('model/footer', ['copy' => "2024"]);
+        return view('products/show', $data);
+        // return view('model/header', $data)
+        // .view('products/show', $data)
+        // .view('model/footer', ['copy' => "2024"]);
     }
 
     public function cat($category, $id){
