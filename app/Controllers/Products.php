@@ -8,7 +8,11 @@ class Products extends BaseController{
         print_r($this->session);
     }
 
-    public function show(){
-        return "<h2>Products Details</h2>";
+    public function show($id){
+        return "<h2>Products Details $id </h2>";
+    }
+
+    public function cat($category, $id){
+        return "<h2>Category: $category <br> Product: $id</h2>";
     }
 }
