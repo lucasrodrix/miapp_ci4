@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductsModels extends Model{
+class ProductsModel extends Model{
     protected $table      = 'products';
     protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    protected $returnType     = 'object';
+    protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['code', 'name','id_store','status'];
+    protected $allowedFields = ['code', 'name','stock','id_store','status'];
 
     protected bool $allowEmptyInserts = false;
 
@@ -22,5 +22,5 @@ class ProductsModels extends Model{
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'entry_date';
     protected $updatedField  = 'edit_date';
-    protected $deletedField  = 'delete_date';
+    protected $deletedField  = '';
 }
