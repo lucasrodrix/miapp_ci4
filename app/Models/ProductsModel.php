@@ -10,7 +10,7 @@ class ProductsModel extends Model{
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'object';
+    protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['code', 'name','stock','id_store','status'];
