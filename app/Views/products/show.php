@@ -1,0 +1,1 @@
+<h2>Products Detail <?php echo $id;?></h2>

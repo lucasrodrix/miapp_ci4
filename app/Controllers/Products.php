@@ -4,12 +4,21 @@ namespace App\Controllers;
 
 class Products extends BaseController{
     public function index(){
-        echo "<h1>Controler Products</h1>";
-        print_r($this->session);
+        $data = ['title' => 'Products Catalog'];
+        return view('model/header', $data)
+        .view('products/index', $data)
+        .view('model/footer', ['copy' => "2024"]);
     }
 
     public function show($id){
-        return "<h2>Products Details $id </h2>";
+        $data = [
+            'title' => 'Products Catalog',
+            'id' => $id
+        ];
+
+        return view('model/header', $data)
+        .view('products/show', $data)
+        .view('model/footer', ['copy' => "2024"]);
     }
 
     public function cat($category, $id){

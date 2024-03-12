@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/products', 'Products::index');
-$routes->get('/products/([0-9]{2})', 'Products::show/$1');
+$routes->get('/products/(:num)', 'Products::show/$1');
 $routes->get('/products/(:alpha)/(:num)', 'Products::cat/$1/$2');
 
 $routes->view('productsList/(:alpha)', 'products_list');
