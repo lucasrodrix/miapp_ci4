@@ -4,11 +4,13 @@ namespace App\Controllers;
 
 class Products extends BaseController{
     public function index(){
-        $data = ['title' => 'Products Catalog'];
+        $db = \Config\Database::connect();
+
+        $query = $db->query('select code, name, stock from products');
+        $res = $query->getResult();
+
+        $data = ['title' => 'Products Catalog','products' => $res];
         return view('products/index', $data);
-        // return view('model/header', $data)
-        // .view('products/index', $data)
-        // .view('model/footer', ['copy' => "2024"]);
     }
 
     public function show($id){
@@ -17,9 +19,6 @@ class Products extends BaseController{
             'id' => $id
         ];
         return view('products/show', $data);
-        // return view('model/header', $data)
-        // .view('products/show', $data)
-        // .view('model/footer', ['copy' => "2024"]);
     }
 
     public function cat($category, $id){
